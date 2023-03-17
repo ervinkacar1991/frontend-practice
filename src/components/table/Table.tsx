@@ -1,10 +1,10 @@
 import React, { useMemo } from "react";
 import TableHead from "./tableHead/tableHead";
 import TableBody from "./tableBody/tableBody";
-import { Result } from "./tableBody/tableBody";
+import { User } from "../../data/data";
 
 interface IProps {
-  data: Result[];
+  data: User[];
   columns: any;
 }
 

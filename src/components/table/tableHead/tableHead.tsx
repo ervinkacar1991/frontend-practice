@@ -1,12 +1,12 @@
 import React from "react";
-import { Result } from "../tableBody/tableBody";
+import { User } from "../../../data/data";
 
 interface Columns {
   [key: string]: string;
 }
 
 interface IProps {
-  results: Result[];
+  results: User[];
   columns: Columns[];
 }
 
