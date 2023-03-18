@@ -16,6 +16,7 @@ export const App = () => {
   let users = useTypedSelector(selectUsers);
   users = users.slice(0, 10); // TODO: Remove this when you have found a better way to not show all users at once
   const columns = [
+    { id: "show_blog", name: "Expand" },
     { id: "first_name", name: "First Name" },
     { id: "last_name", name: "Last Name" },
     { id: "email", name: "Email" },
