@@ -9,7 +9,6 @@ interface IProps {
 }
 
 const Table = ({ data, columns }: IProps) => {
-  console.log(data);
   return useMemo(
     () => (
       <table>

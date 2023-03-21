@@ -15,8 +15,11 @@ export const GlobalStyles = React.memo(
       border-collapse: collapse;
       border-spacing: 0;
       margin-top: 10px;
+      height: 500px;
     }
-
+    tr {
+      width: 100%;
+    }
     th,
     td {
       border: 1px solid #dddddd;

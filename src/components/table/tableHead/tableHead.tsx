@@ -12,7 +12,7 @@ interface IProps {
 
 const TableHead: React.FC<IProps> = ({ results, columns }) => {
   return (
-    <thead>
+    <thead style={{ width: "100%" }}>
       <tr>
         {columns.map((column: any) => (
           <th key={column.id}>{column.name}</th>

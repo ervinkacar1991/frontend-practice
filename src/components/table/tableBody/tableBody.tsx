@@ -19,9 +19,9 @@ const TableBody: React.FC<IProps> = ({ results }) => {
   //   setIsExpanded(newIsExpanded);
   // };
   return (
-    <tbody>
-      {results.map((result: User, index: number) => (
-        <Fragment key={result.id as number}>
+    <tbody style={{ width: "100%" }}>
+      {results.map((result: User) => (
+        <Fragment key={`table-${result.id}`}>
           <TableRow result={result} />
           {/* {isExpanded.includes(result.id as number) && <tr>Expanded</tr>} */}
         </Fragment>

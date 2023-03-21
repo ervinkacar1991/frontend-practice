@@ -5,9 +5,12 @@ import {
 } from "@reduxjs/toolkit";
 
 import userReducer from "./user/userSlice";
+import memberReducer from "./user/memberSlice";
 
 const rootReducer = combineReducers({
   user: userReducer,
+  member: memberReducer,
+
   // TODO: Add more reducers here if needed
 });
 

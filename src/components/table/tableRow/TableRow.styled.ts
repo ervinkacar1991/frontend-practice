@@ -11,3 +11,12 @@ export const Svg = styled.svg`
   cursor: pointer;
   margin-left: 15px;
 `;
+export const ActionSvg = styled.svg`
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  margin-left: 15px;
+  &:hover {
+    color: red;
+  }
+`;
