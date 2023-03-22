@@ -1,7 +1,7 @@
 import React from "react";
 import { BlogPost } from "../../data/data";
 import { ActionSvg } from "../table/tableRow/TableRow.styled";
-import { StyledBlogPostRow, Svg } from "./BlogPost.styled";
+import { StyledBlogPostRow, Svg, TitleDeck } from "./BlogPost.styled";
 import { StyledLink } from "./BlogPost.styled";
 import { useAppDispatch } from "../../hooks/useAppDispatch";
 import { handleDeletePost } from "../../redux/user/memberSlice";
@@ -41,7 +41,7 @@ const BlogPostRow: React.FC<IProps> = ({ userBlogs }) => {
             </StyledLink>
           </td>
 
-          <td colSpan={5}>{blog.id}</td>
+          <TitleDeck colSpan={5}>{blog.id}</TitleDeck>
           <td>
             <ActionSvg onClick={() => blogPostDeleteHandler(blog)}>
               <svg

@@ -15,10 +15,18 @@ export const StyledLink = styled(Link)`
   text-decoration: none;
 `;
 export const StyledBlogPostRow = styled("tr")`
-  border: 2px solid green;
-  height: 100px;
+  border: 1px solid gray;
+  height: auto;
 
   td {
     border: none;
+  }
+`;
+export const TitleDeck = styled.td`
+  border: 1px solid gray;
+  background-color: #61d095;
+  padding: 20px;
+  &:hover {
+    background-color: #48bf84;
   }
 `;
