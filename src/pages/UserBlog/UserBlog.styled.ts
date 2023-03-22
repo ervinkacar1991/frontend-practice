@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Wrapper = styled.div`
   width: 100%;
-  height: 100vh;
+  height: 93vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -39,17 +39,26 @@ export const Main = styled.div`
   }
 `;
 
-export const Detail = styled.div`
-  width: 60%;
+export const DetailsContainer = styled.div`
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-around;
+`;
+
+export const DatePostedContainer = styled.div`
+  display: flex;
+  align-items: center;
+  p {
+    margin-left: 10px;
+  }
 `;
 
 export const Button = styled.button`
   background-color: #e0bad7;
   padding: 10px;
   border-radius: 8px;
+  cursor: pointer;
 `;
 export const Svg = styled.svg`
   width: 24px;
@@ -59,5 +68,16 @@ export const Svg = styled.svg`
   margin-left: 15px;
   &:hover {
     color: green;
+  }
+`;
+export const ActionSvg = styled.svg`
+  width: 24px;
+  height: 24px;
+  color: #48bf84;
+
+  cursor: pointer;
+  margin-left: 15px;
+  &:hover {
+    color: #439775;
   }
 `;

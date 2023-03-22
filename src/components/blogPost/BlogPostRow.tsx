@@ -1,6 +1,6 @@
 import React from "react";
 import { BlogPost } from "../../data/data";
-import { ActionSvg } from "../table/tableRow/TableRow.styled";
+import { ActionSvg, SvgContainer } from "../table/tableRow/TableRow.styled";
 import { StyledBlogPostRow, Svg, TitleDeck } from "./BlogPost.styled";
 import { StyledLink } from "./BlogPost.styled";
 import { useAppDispatch } from "../../hooks/useAppDispatch";
@@ -42,6 +42,7 @@ const BlogPostRow: React.FC<IProps> = ({ userBlogs }) => {
           </td>
 
           <TitleDeck colSpan={5}>{blog.id}</TitleDeck>
+
           <td>
             <ActionSvg onClick={() => blogPostDeleteHandler(blog)}>
               <svg

@@ -11,6 +11,11 @@ export const Svg = styled.svg`
   cursor: pointer;
   margin-left: 15px;
 `;
+export const SvgContainer = styled.div`
+  width: 100px;
+  display: flex;
+`;
+
 export const ActionSvg = styled.svg`
   width: 24px;
   height: 24px;

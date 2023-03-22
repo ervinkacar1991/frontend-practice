@@ -22,6 +22,7 @@ export const StyledBlogPostRow = styled("tr")`
     border: none;
   }
 `;
+
 export const TitleDeck = styled.td`
   border: 1px solid gray;
   background-color: #61d095;
