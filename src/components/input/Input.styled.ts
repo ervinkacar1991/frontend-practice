@@ -11,6 +11,10 @@ export const Label = styled.label`
   line-height: 1.5rem;
   color: gray;
 `;
-export const Input = styled.input`
-  background-color: rgba(128, 128, 128, 0.5);
+export const StyledInput = styled.input`
+  width: 576px;
+  background-color: rgb(229 231 235);
+  padding: 1rem 0.75rem;
+  border-width: 2px;
+  outline: none;
 `;
