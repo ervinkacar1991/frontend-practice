@@ -16,8 +16,6 @@ const TableRow: React.FC<IProps> = ({ result }) => {
   const dispatch = useAppDispatch();
   let blogs = useTypedSelector(selectMembers);
 
-  // const userBlogs = blogs.filter((blog) => blog.userId === result.id);
-
   const usersBlogPost = useMemo(() => {
     if (isExpanded && result?.id) {
       return blogs.filter((blog) => blog.userId === result.id);
@@ -31,7 +29,6 @@ const TableRow: React.FC<IProps> = ({ result }) => {
   };
 
   const userDeleteHandler = async (user: User) => {
-    // deleteUser(user.id);
     const data = await dispatch(handleDeleteUser(user.id)).unwrap();
   };
 
@@ -75,6 +72,7 @@ const TableRow: React.FC<IProps> = ({ result }) => {
         <td>{result.email}</td>
         <td>{result.gender}</td>
         <td>{result.ip_address}</td>
+
         <td>
           <ActionSvg onClick={() => userDeleteHandler(result)}>
             <svg

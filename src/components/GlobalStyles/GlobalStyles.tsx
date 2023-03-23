@@ -4,7 +4,7 @@ import { createGlobalStyle, css } from "styled-components";
 export const GlobalStyles = React.memo(
   createGlobalStyle`${css`
     * {
-      margin: 0;
+      margin: 0
       box-sizing: border-box;
       padding: 0;
       border: 0;
@@ -12,19 +12,29 @@ export const GlobalStyles = React.memo(
     }
 
     table {
+      width: 55%;
       border-collapse: collapse;
       border-spacing: 0;
-      margin-top: 10px;
-      height: 500px;
+      margin-top: 50px;
+      display: block;
+      margin-right: auto;
+      margin-left: auto;
     }
-    tr {
-      width: 100%;
-    }
-    th,
-    td {
-      border: 1px solid #dddddd;
+    th {
+      padding: 15px;
+      font-size: 18px;
+      font-weight: 500;
       text-align: left;
-      padding: 8px;
+    }
+    th:first-child {
+      text-align: left;
+    }
+    th:first-child {
+      background-color: #f9f9f9;
+      font-weight: 500;
+    }
+    th:first-child:hover {
+      background-color: #eee;
     }
   `}`,
 );

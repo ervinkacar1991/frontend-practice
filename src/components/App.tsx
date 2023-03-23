@@ -20,7 +20,6 @@ export const App = () => {
         <Route path="/" element={<HomePage />} />
         <Route path="/blog-post/:blogId" element={<UserBlog />} />
         <Route path="/add-post" element={<AddPost />} />
-        <Route path="/edit-post/:id" element={<EditPostPage />} />
       </Routes>
     </StyledWrapper>
   );

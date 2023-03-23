@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo } from "react";
+import React, { useEffect, useState } from "react";
 import Table from "../../components/table/Table";
 import { useAppDispatch } from "../../hooks/useAppDispatch";
 import { useTypedSelector } from "../../hooks/useTypedSelector";
@@ -10,7 +10,7 @@ const HomePage = () => {
   let users = useTypedSelector(selectUsers);
   const blogs = useTypedSelector(selectMembers);
 
-  users = users.slice(0, 10);
+  users = users.slice(0, 20);
 
   const columns = [
     { id: "expand", name: "Expand" },
@@ -19,8 +19,10 @@ const HomePage = () => {
     { id: "email", name: "Email" },
     { id: "gender", name: "Gender" },
     { id: "ip_address", name: "IP Address" },
-    { id: "action", name: "Action" },
+    { id: "del", name: "Delete" },
   ];
+  const [currentPage, setCurrentPage] = useState(1);
+  const [itemsPerPage, setItemsPerPage] = useState(5);
 
   useEffect(() => {
     if (!users?.length) {
@@ -34,9 +36,27 @@ const HomePage = () => {
     }
   }, [dispatch, blogs?.length]);
 
+  const indexOfLastItem = currentPage * itemsPerPage;
+  const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+
   return (
     <>
-      <Table data={users} columns={columns} />
+      <Table
+        data={users.slice(indexOfFirstItem, indexOfLastItem)}
+        columns={columns}
+      />
+      <button
+        disabled={currentPage === 1}
+        onClick={() => setCurrentPage(currentPage - 1)}
+      >
+        Prev
+      </button>
+      <button
+        disabled={indexOfFirstItem >= users.length}
+        onClick={() => setCurrentPage(currentPage + 1)}
+      >
+        Next
+      </button>
     </>
   );
 };

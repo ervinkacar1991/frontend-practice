@@ -14,26 +14,40 @@ export const CardItem = styled.div`
   max-width: 700px;
   border: 1px solid #ddd;
   border-radius: 8px 8px 0 0;
-  padding: 20px;
+
   margin: 16px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
   background-color: #ececec;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.2);
+  }
 `;
 export const TitleWrapper = styled.div`
   width: 100%;
   height: 100px;
   display: flex;
+  padding: 20px;
   justify-content: center;
+  align-items: center;
 `;
-export const Title = styled.h2`
+export const Title = styled.h3`
   font-weight: bold;
   text-align: center;
 `;
 
 export const Main = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  width: 100%;
+  height: 400px;
+  background-color: white;
   p {
     line-height: 20px;
   }
@@ -54,12 +68,6 @@ export const DatePostedContainer = styled.div`
   }
 `;
 
-export const Button = styled.button`
-  background-color: #e0bad7;
-  padding: 10px;
-  border-radius: 8px;
-  cursor: pointer;
-`;
 export const Svg = styled.svg`
   width: 24px;
   height: 24px;

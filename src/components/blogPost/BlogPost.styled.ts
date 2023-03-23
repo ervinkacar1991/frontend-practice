@@ -5,7 +5,10 @@ export const Svg = styled.svg`
   width: 24px;
   height: 24px;
   cursor: pointer;
-  margin-left: 15px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+
   &:hover {
     color: green;
   }
@@ -15,19 +18,48 @@ export const StyledLink = styled(Link)`
   text-decoration: none;
 `;
 export const StyledBlogPostRow = styled("tr")`
-  border: 1px solid gray;
-  height: auto;
+  background-color: #ececec;
+  &:not(:last-child) {
+    border-bottom: 1px solid #ddd;
+  }
 
   td {
     border: none;
+    border-right: 1px solid gray;
+  }
+  &:hover {
+    background-color: gray;
+  }
+`;
+export const DeleteIconWrapper = styled.svg`
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5px;
+
+  &:hover {
+    color: red;
+  }
+`;
+export const AddIconWrapper = styled.svg`
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5px;
+
+  &:hover {
+    color: #61d095;
   }
 `;
 
 export const TitleDeck = styled.td`
+  padding: 10px;
   border: 1px solid gray;
-  background-color: #61d095;
-  padding: 20px;
-  &:hover {
-    background-color: #48bf84;
-  }
+  transition: background-color 0.2s ease-in-out;
 `;

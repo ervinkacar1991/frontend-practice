@@ -1,10 +1,17 @@
 import React from "react";
 import Button from "../../components/button/Button";
 import Input from "../../components/input/Input";
+import { useNavigate } from "react-router-dom";
 
 import { FormWrapper, Wrapper } from "./AddPostPage.styled";
 
 const AddPost = () => {
+  const navigate = useNavigate();
+
+  const addUser = () => {
+    navigate("/");
+  };
+
   return (
     <Wrapper>
       <FormWrapper>
@@ -24,7 +31,7 @@ const AddPost = () => {
           label="Date posted"
           inputProps={{ type: "text", placeholder: "Enter Body" }}
         />
-        <Button>Add user</Button>
+        <Button onAddUser={addUser}>Add user</Button>
       </FormWrapper>
     </Wrapper>
   );
