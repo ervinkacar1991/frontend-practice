@@ -11,10 +11,9 @@ export const Wrapper = styled.div`
 export const CardItem = styled.div`
   width: 100%;
   height: 70vh;
-  max-width: 700px;
+  max-width: 650px;
   border: 1px solid #ddd;
   border-radius: 8px 8px 0 0;
-
   margin: 16px;
   display: flex;
   flex-direction: column;
@@ -44,12 +43,12 @@ export const Main = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 20px;
   width: 100%;
   height: 400px;
   background-color: white;
   p {
     line-height: 20px;
+    padding: 15px;
   }
 `;
 

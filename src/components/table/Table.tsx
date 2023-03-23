@@ -12,12 +12,12 @@ interface IProps {
 const Table = ({ data, columns }: IProps) => {
   return useMemo(
     () => (
-      <TableWrapper>
-        <table>
-          <TableHead results={[]} columns={columns} />
-          <TableBody results={data} />
-        </table>
-      </TableWrapper>
+      // <TableWrapper>
+      <table>
+        <TableHead results={[]} columns={columns} />
+        <TableBody results={data} />
+      </table>
+      // </TableWrapper>
     ),
     [data, columns],
   );
