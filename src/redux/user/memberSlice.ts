@@ -1,4 +1,9 @@
-import { getMembers, BlogPost, deleteBlogPost } from "../../data/data";
+import {
+  getMembers,
+  BlogPost,
+  deleteBlogPost,
+  editBlogPost,
+} from "../../data/data";
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import { RootState } from "../store";
 
@@ -19,6 +24,19 @@ export const handleDeletePost = createAsyncThunk(
   },
 );
 
+export const updateBlogPost = createAsyncThunk(
+  "blogPosts/updateBlogPost",
+  async (data: Omit<BlogPost, "id">) => {
+    const blogPosts = await getMembers();
+    const index = blogPosts.findIndex((post) => post.title === data.title);
+    if (index !== -1) {
+      const response = await editBlogPost(blogPosts[index].id, data);
+      return response;
+    } else {
+      throw new Error("Blog post not found");
+    }
+  },
+);
 export interface MemberState {
   blogs: BlogPost[];
 }
@@ -40,6 +58,14 @@ export const memberSlice = createSlice({
     });
     builder.addCase(handleDeletePost.fulfilled, (state, action) => {
       state.blogs = action.payload;
+    });
+    builder.addCase(updateBlogPost.fulfilled, (state, action) => {
+      const index = state.blogs.findIndex(
+        (post) => post.id === action.payload.id,
+      );
+      if (index !== -1) {
+        state.blogs[index] = action.payload;
+      }
     });
   },
 });

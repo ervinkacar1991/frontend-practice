@@ -127,6 +127,7 @@ const UserBlog = () => {
 
       {showModal && (
         <EditPostPage
+          post={blog}
           onClose={() => {
             setShowModal(false);
           }}

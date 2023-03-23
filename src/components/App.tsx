@@ -5,7 +5,6 @@ import { GlobalStyles } from "./GlobalStyles/GlobalStyles";
 import UserBlog from "../pages/UserBlog/UserBlog";
 import HomePage from "../pages/homePage/HomePage";
 import AddPost from "../pages/addPostPage/AddPost";
-import EditPostPage from "../pages/editPostPage/EditPostPage";
 
 const StyledWrapper = styled.div`
   padding: 24px;

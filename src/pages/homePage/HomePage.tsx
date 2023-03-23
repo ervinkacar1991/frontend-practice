@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from "react";
-import NextButton from "../../components/paginationButtons/NextButton";
-import { PaginationButton } from "../../components/paginationButtons/PaginationButtons.styled";
-import PrevButton from "../../components/paginationButtons/PrevButton";
+import PaginationButtons from "../../components/button/PaginationButtons";
 import Table from "../../components/table/Table";
 import { useAppDispatch } from "../../hooks/useAppDispatch";
 import { useTypedSelector } from "../../hooks/useTypedSelector";
@@ -50,14 +48,18 @@ const HomePage = () => {
         columns={columns}
       />
       <div>
-        <PrevButton
-          // disabled={currentPage === 1}
+        <PaginationButtons
+          disabled={currentPage === 1}
           onClick={() => setCurrentPage(currentPage - 1)}
-        ></PrevButton>
-        <NextButton
-          // disabled={indexOfFirstItem >= users.length}
+        >
+          Prev
+        </PaginationButtons>
+        <PaginationButtons
+          disabled={indexOfFirstItem >= users.length}
           onClick={() => setCurrentPage(currentPage + 1)}
-        ></NextButton>
+        >
+          Next
+        </PaginationButtons>
       </div>
     </HomePageWrapper>
   );

@@ -2,8 +2,8 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 
 export const Svg = styled.svg`
-  width: 24px;
-  height: 24px;
+  width: 20px;
+  height: 20px;
   cursor: pointer;
   display: block;
   margin-left: auto;
@@ -32,8 +32,8 @@ export const StyledBlogPostRow = styled("tr")`
   }
 `;
 export const DeleteIconWrapper = styled.svg`
-  width: 24px;
-  height: 24px;
+  width: 20px;
+  height: 20px;
   cursor: pointer;
   display: block;
   margin-left: auto;

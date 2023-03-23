@@ -8,9 +8,9 @@ import { FormWrapper, Wrapper } from "./AddPostPage.styled";
 const AddPost = () => {
   const navigate = useNavigate();
 
-  const addUser = () => {
-    navigate("/");
-  };
+  // const addUser = () => {
+  //   navigate("/");
+  // };
 
   return (
     <Wrapper>
@@ -31,7 +31,7 @@ const AddPost = () => {
           label="Date posted"
           inputProps={{ type: "text", placeholder: "Enter Body" }}
         />
-        <Button onAddUser={addUser}>Add user</Button>
+        <Button>Add user</Button>
       </FormWrapper>
     </Wrapper>
   );
