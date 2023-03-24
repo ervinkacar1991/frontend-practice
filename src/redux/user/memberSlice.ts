@@ -3,6 +3,7 @@ import {
   BlogPost,
   deleteBlogPost,
   editBlogPost,
+  addBlogPost,
 } from "../../data/data";
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import { RootState } from "../store";
@@ -31,7 +32,6 @@ export const updateBlogPost = createAsyncThunk(
     const index = blogPosts.findIndex((post) => post.userId === data.userId);
     if (index !== -1) {
       const response = await editBlogPost(blogPosts[index].id, data);
-      console.log("sdadsaD", { response });
       return response;
     } else {
       throw new Error("Blog post not found");
@@ -39,6 +39,13 @@ export const updateBlogPost = createAsyncThunk(
   },
 );
 
+export const addBlogPostHandler = createAsyncThunk(
+  "blogPosts/addBlogPost",
+  async (newBlogPost: BlogPost) => {
+    const addedPost = await addBlogPost(newBlogPost);
+    return addedPost;
+  },
+);
 export interface MemberState {
   blogs: BlogPost[];
 }
@@ -68,6 +75,9 @@ export const memberSlice = createSlice({
       if (index !== -1) {
         state.blogs[index] = action.payload;
       }
+    });
+    builder.addCase(addBlogPostHandler.fulfilled, (state, { payload }) => {
+      state.blogs.unshift(payload);
     });
   },
 });

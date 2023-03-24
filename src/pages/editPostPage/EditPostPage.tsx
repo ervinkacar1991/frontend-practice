@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import Button from "../../components/button/Button";
 import Input from "../../components/input/Input";
-import { useNavigate } from "react-router-dom";
 import { useAppDispatch } from "../../hooks/useAppDispatch";
 import { updateBlogPost } from "../../redux/user/memberSlice";
 import { ActionSvg, FormWrapper, Wrapper } from "./EditPostPage.styled";
@@ -18,8 +17,6 @@ const EditPostPage: React.FC<EditPostPageProps> = ({ onClose, post }) => {
     body: post?.body,
   });
   const dispatch = useAppDispatch();
-  const navigate = useNavigate();
-  console.log({ post });
 
   const handleEditPost = () => {
     dispatch(

@@ -14,11 +14,10 @@ export const App = () => {
   return (
     <StyledWrapper>
       <GlobalStyles />
-
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/blog-post/:blogId" element={<UserBlog />} />
-        <Route path="/add-post" element={<AddPost />} />
+        <Route path="/:userId/add-post" element={<AddPost />} />
       </Routes>
     </StyledWrapper>
   );

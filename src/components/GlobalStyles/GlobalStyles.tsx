@@ -4,7 +4,7 @@ import { createGlobalStyle, css } from "styled-components";
 export const GlobalStyles = React.memo(
   createGlobalStyle`${css`
     * {
-      margin: 0
+      margin: 0;
       box-sizing: border-box;
       padding: 0;
       border: 0;

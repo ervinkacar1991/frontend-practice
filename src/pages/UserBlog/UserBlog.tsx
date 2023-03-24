@@ -44,12 +44,12 @@ const UserBlog = () => {
       <CardItem>
         <TitleWrapper>
           <Title>
-            {blog?.title.substring(0, 200) || "Title Placeholder"}. . .
+            {blog?.title.substring(0, 180) || "Title Placeholder"}. . .
           </Title>
         </TitleWrapper>
 
         <Main>
-          <p>{blog?.body.substring(0, 1000)}. . .</p>
+          <p>{blog?.body.substring(0, 900)}. . .</p>
         </Main>
         <DetailsContainer>
           <div>
