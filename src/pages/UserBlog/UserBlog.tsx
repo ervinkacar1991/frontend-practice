@@ -16,6 +16,7 @@ import { useAppDispatch } from "../../hooks/useAppDispatch";
 import { useTypedSelector } from "../../hooks/useTypedSelector";
 import { fetchMembers, selectMembers } from "../../redux/user/memberSlice";
 import EditPostPage from "../editPostPage/EditPostPage";
+import { BlogPost } from "../../data/data";
 
 const UserBlog = () => {
   const [showModal, setShowModal] = useState(false);
@@ -36,6 +37,7 @@ const UserBlog = () => {
   const showEditModalHandler = () => {
     setShowModal((prevState) => !prevState);
   };
+  console.log(blog);
 
   return (
     <Wrapper>
@@ -127,7 +129,7 @@ const UserBlog = () => {
 
       {showModal && (
         <EditPostPage
-          post={blog}
+          post={blog as BlogPost}
           onClose={() => {
             setShowModal(false);
           }}

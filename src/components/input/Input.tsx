@@ -1,16 +1,16 @@
-import React from "react";
+import React, { InputHTMLAttributes } from "react";
 import { InputWrapper, Label, StyledInput } from "./Input.styled";
 
-interface InputProps {
+interface InputProps extends InputHTMLAttributes<HTMLTextAreaElement> {
   label: string;
   inputProps: Record<string, string>;
 }
 
-const Input: React.FC<InputProps> = ({ label, inputProps }) => {
+const Input: React.FC<InputProps> = ({ label, inputProps, ...rest }) => {
   return (
     <InputWrapper>
       <Label>{label}</Label>
-      <StyledInput {...inputProps} />
+      <StyledInput {...inputProps} {...rest} />
     </InputWrapper>
   );
 };

@@ -39,30 +39,27 @@ const TableRow: React.FC<IProps> = ({ result }) => {
           {!isExpanded ? (
             <Svg
               xmlns="http://www.w3.org/2000/svg"
-              fill="none"
               viewBox="0 0 24 24"
-              strokeWidth={1.5}
-              stroke="currentColor"
+              fill="currentColor"
+              className="w-6 h-6"
             >
               <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M8.25 4.5l7.5 7.5-7.5 7.5"
+                fillRule="evenodd"
+                d="M12.53 16.28a.75.75 0 01-1.06 0l-7.5-7.5a.75.75 0 011.06-1.06L12 14.69l6.97-6.97a.75.75 0 111.06 1.06l-7.5 7.5z"
+                clipRule="evenodd"
               />
             </Svg>
           ) : (
             <Svg
               xmlns="http://www.w3.org/2000/svg"
-              fill="none"
               viewBox="0 0 24 24"
-              strokeWidth={1.5}
-              stroke="currentColor"
+              fill="currentColor"
               className="w-6 h-6"
             >
               <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M19.5 8.25l-7.5 7.5-7.5-7.5"
+                fillRule="evenodd"
+                d="M11.47 7.72a.75.75 0 011.06 0l7.5 7.5a.75.75 0 11-1.06 1.06L12 9.31l-6.97 6.97a.75.75 0 01-1.06-1.06l7.5-7.5z"
+                clipRule="evenodd"
               />
             </Svg>
           )}

@@ -5,39 +5,30 @@ import { useNavigate } from "react-router-dom";
 import { useAppDispatch } from "../../hooks/useAppDispatch";
 import { updateBlogPost } from "../../redux/user/memberSlice";
 import { ActionSvg, FormWrapper, Wrapper } from "./EditPostPage.styled";
+import { BlogPost } from "../../data/data";
 
-// interface Props {
-//   onClose: () => void;
-//   post: {
-//     title: string;
-//     body: string;
-//   };
-// }
-interface Post {
-  id: string;
-  title: string;
-  body: string;
-  userId: string;
-}
 interface EditPostPageProps {
   onClose: () => void;
-  post: any;
+  post: BlogPost;
 }
 
 const EditPostPage: React.FC<EditPostPageProps> = ({ onClose, post }) => {
-  // const [title, setTitle] = useState(post.title);
-  // const [body, setBody] = useState(post.body);
+  const [editedPost, setEditedPost] = useState({
+    title: post?.title,
+    body: post?.body,
+  });
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
+  console.log({ post });
 
   const handleEditPost = () => {
     dispatch(
       updateBlogPost({
-        title,
-        body,
+        ...post,
+        ...editedPost,
       }),
     );
-    navigate("/");
+
     onClose();
   };
   return (
@@ -65,12 +56,32 @@ const EditPostPage: React.FC<EditPostPageProps> = ({ onClose, post }) => {
         <br />
         <Input
           label="Title"
-          inputProps={{ type: "text", placeholder: "Update Title" }}
+          value={editedPost.title}
+          onChange={(e) =>
+            setEditedPost({
+              ...editedPost,
+              title: e.target.value,
+            })
+          }
+          inputProps={{
+            type: "text",
+            placeholder: "Update Title",
+          }}
         />
         <br />
         <Input
+          value={editedPost.body}
+          onChange={(e) =>
+            setEditedPost({
+              ...editedPost,
+              body: e.target.value,
+            })
+          }
           label="Body"
-          inputProps={{ type: "text", placeholder: "Update Body" }}
+          inputProps={{
+            type: "text",
+            placeholder: "Update Body",
+          }}
         />
         <br />
 

@@ -12,8 +12,6 @@ const HomePage = () => {
   let users = useTypedSelector(selectUsers);
   const blogs = useTypedSelector(selectMembers);
 
-  // users = users.slice(0, 20);
-
   const columns = [
     { id: "expand", name: "Expand" },
     { id: "first_name", name: "First Name" },
@@ -23,6 +21,7 @@ const HomePage = () => {
     { id: "ip_address", name: "IP Address" },
     { id: "del", name: "Delete" },
   ];
+
   const [currentPage, setCurrentPage] = useState(1);
   const [itemsPerPage, setItemsPerPage] = useState(10);
 

@@ -10,8 +10,8 @@ export const Wrapper = styled.div`
 
 export const CardItem = styled.div`
   width: 100%;
-  height: 70vh;
-  max-width: 650px;
+  height: 60vh;
+  max-width: 550px;
   border: 1px solid #ddd;
   border-radius: 8px 8px 0 0;
   margin: 16px;

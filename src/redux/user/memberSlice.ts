@@ -28,15 +28,17 @@ export const updateBlogPost = createAsyncThunk(
   "blogPosts/updateBlogPost",
   async (data: Omit<BlogPost, "id">) => {
     const blogPosts = await getMembers();
-    const index = blogPosts.findIndex((post) => post.title === data.title);
+    const index = blogPosts.findIndex((post) => post.userId === data.userId);
     if (index !== -1) {
       const response = await editBlogPost(blogPosts[index].id, data);
+      console.log("sdadsaD", { response });
       return response;
     } else {
       throw new Error("Blog post not found");
     }
   },
 );
+
 export interface MemberState {
   blogs: BlogPost[];
 }
